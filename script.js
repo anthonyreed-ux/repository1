@@ -39,7 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
     '.section-label, .section-header, .about-content, .about-image, ' +
     '.product-card, .livestock-card, .process-step, .tech-card, ' +
     '.market-card, .markets-callout, .contact-card, .contact-form-wrapper, ' +
-    '.cta-content, .hero-stats .stat'
+    '.cta-content, .hero-stats .stat, ' +
+    '.cells-figure, .cells-stat, ' +
+    '.dairy-yield-card'
   );
 
   animatedElements.forEach(el => el.classList.add('fade-in'));

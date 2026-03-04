@@ -29,6 +29,8 @@
         <li><a href="#about">About</a></li>
         <li><a href="#products">Products</a></li>
         <li><a href="#technology">Technology</a></li>
+        <li><a href="horses.html">Horses</a></li>
+        <li><a href="dairy.html">Dairy</a></li>
         <li><a href="#markets">Markets</a></li>
         <li><a href="#contact" class="btn btn-nav">Contact Us</a></li>
       </ul>
@@ -378,6 +380,232 @@
     </div>
   </section>
 
+  <!-- Process Flow Diagram Section -->
+  <section class="section process-flow-section" id="process-flow">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Production Process</div>
+        <h2>From Paddock to Customer</h2>
+        <p>A clear division of responsibility between grower and Fodder King ensures quality at every stage of the production chain.</p>
+      </div>
+
+      <div class="process-flow-diagram">
+        <img src="roles.jpeg" alt="Fodder King production process flow diagram showing grower and Fodder King roles" class="process-flow-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- Production Cells Section -->
+  <section class="section section-cells" id="cells">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Operational Model</div>
+        <h2>Concentrating Production into Cells</h2>
+        <p>Contract growers are organised into geographic clusters — each anchored by a Fodder King demonstration farm — maximising logistics efficiency within a 50 km operational radius.</p>
+      </div>
+
+      <div class="cells-diagram-wrapper">
+        <figure class="cells-figure">
+          <svg class="cells-svg" viewBox="0 0 600 510" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="cellsDiagramTitle">
+            <title id="cellsDiagramTitle">Concentrating Production into Cells — 50 km operational radius with 3 production cells, a central demonstration farm, and contract growers</title>
+
+            <defs>
+              <clipPath id="circleRegion">
+                <circle cx="300" cy="215" r="192"/>
+              </clipPath>
+              <filter id="cellGlow" x="-15%" y="-15%" width="130%" height="130%">
+                <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="rgba(212,168,67,0.35)"/>
+              </filter>
+              <filter id="farmGlow" x="-25%" y="-25%" width="150%" height="150%">
+                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="rgba(27,67,50,0.5)"/>
+              </filter>
+              <radialGradient id="terrainGrad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#D8F3DC"/>
+                <stop offset="100%" stop-color="#B7E4C7"/>
+              </radialGradient>
+            </defs>
+
+            <!-- ── Background ── -->
+            <rect width="600" height="420" fill="#EDF7F0" rx="12"/>
+
+            <!-- Subtle terrain dots inside circle -->
+            <g fill="#C8E6C9" opacity="0.45" clip-path="url(#circleRegion)">
+              <circle cx="252" cy="158" r="20"/>
+              <circle cx="345" cy="140" r="15"/>
+              <circle cx="424" cy="168" r="17"/>
+              <circle cx="438" cy="295" r="14"/>
+              <circle cx="338" cy="348" r="16"/>
+              <circle cx="248" cy="312" r="13"/>
+              <circle cx="150" cy="265" r="15"/>
+              <circle cx="132" cy="182" r="12"/>
+              <circle cx="365" cy="378" r="13"/>
+              <circle cx="292" cy="370" r="11"/>
+            </g>
+
+            <!-- ── 50 km Boundary circle ── -->
+            <circle cx="300" cy="215" r="192" fill="rgba(149,213,178,0.06)" stroke="#52B788" stroke-width="2.5" stroke-dasharray="10 5" opacity="0.85"/>
+
+            <!-- ── River (extends beyond radius) ── -->
+            <g>
+              <!-- River body -->
+              <path d="M 58 248 C 125 232, 165 260, 235 265 C 295 270, 345 262, 390 255 C 435 248, 475 240, 540 252"
+                stroke="#29B6F6" stroke-width="24" stroke-linecap="round" fill="none"/>
+              <!-- River sheen -->
+              <path d="M 58 248 C 125 232, 165 260, 235 265 C 295 270, 345 262, 390 255 C 435 248, 475 240, 540 252"
+                stroke="#81D4FA" stroke-width="13" stroke-linecap="round" fill="none"/>
+              <!-- River highlight shimmer -->
+              <path d="M 58 248 C 125 232, 165 260, 235 265 C 295 270, 345 262, 390 255 C 435 248, 475 240, 540 252"
+                stroke="rgba(255,255,255,0.55)" stroke-width="4" stroke-linecap="round" stroke-dasharray="22 18" fill="none"/>
+            </g>
+
+            <!-- River label -->
+            <g transform="translate(68,238) rotate(-4)">
+              <rect x="-5" y="-14" width="48" height="20" rx="5" fill="rgba(2,119,189,0.13)"/>
+              <text font-family="Inter, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#0277BD">River</text>
+            </g>
+
+            <!-- ── Production Cells ── -->
+            <!-- Cell 1 — centred, above river, containing demo farm -->
+            <g class="prod-cell" data-cell="1">
+              <ellipse cx="300" cy="155" rx="82" ry="70"
+                fill="rgba(255,213,79,0.18)" stroke="#D4A843" stroke-width="2.5" stroke-dasharray="8 4"
+                filter="url(#cellGlow)"/>
+              <text x="300" y="105" text-anchor="middle"
+                font-family="Inter, -apple-system, sans-serif" font-size="12.5" font-weight="700" fill="#7B5800">Production</text>
+              <text x="300" y="122" text-anchor="middle"
+                font-family="Inter, -apple-system, sans-serif" font-size="12.5" font-weight="700" fill="#7B5800">Cell 1</text>
+            </g>
+
+            <!-- Cell 2 — lower-right (inside radius, below river) -->
+            <g class="prod-cell" data-cell="2">
+              <ellipse cx="370" cy="330" rx="52" ry="40"
+                fill="rgba(255,213,79,0.18)" stroke="#D4A843" stroke-width="2.5" stroke-dasharray="8 4"
+                filter="url(#cellGlow)"/>
+              <text x="370" y="324" text-anchor="middle"
+                font-family="Inter, -apple-system, sans-serif" font-size="12.5" font-weight="700" fill="#7B5800">Production</text>
+              <text x="370" y="342" text-anchor="middle"
+                font-family="Inter, -apple-system, sans-serif" font-size="12.5" font-weight="700" fill="#7B5800">Cell 2</text>
+            </g>
+
+            <!-- Cell 3 — lower-left (inside radius, below river) -->
+            <g class="prod-cell" data-cell="3">
+              <ellipse cx="220" cy="335" rx="48" ry="36"
+                fill="rgba(255,213,79,0.18)" stroke="#D4A843" stroke-width="2.5" stroke-dasharray="8 4"
+                filter="url(#cellGlow)"/>
+              <text x="220" y="329" text-anchor="middle"
+                font-family="Inter, -apple-system, sans-serif" font-size="12.5" font-weight="700" fill="#7B5800">Production</text>
+              <text x="220" y="347" text-anchor="middle"
+                font-family="Inter, -apple-system, sans-serif" font-size="12.5" font-weight="700" fill="#7B5800">Cell 3</text>
+            </g>
+
+            <!-- ── Fodder King Demo Farm (Central Hub) ── -->
+            <g class="demo-farm" filter="url(#farmGlow)">
+              <!-- Pulse ring -->
+              <circle cx="300" cy="216" r="24" fill="none" stroke="#52B788" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.65"/>
+              <!-- Farm square marker -->
+              <rect x="284" y="200" width="32" height="32" rx="5" fill="#1B4332" stroke="#0D2B1E" stroke-width="1.5"/>
+              <rect x="289" y="205" width="22" height="22" rx="3" fill="#52B788"/>
+              <!-- Barn silhouette inside -->
+              <path d="M 296 221 L 296 214 L 300 210 L 304 214 L 304 221 Z" fill="#1B4332"/>
+              <rect x="298" y="216" width="4" height="5" rx="1" fill="#95D5B2"/>
+            </g>
+
+            <!-- ── 50 km Radius indicator ── -->
+            <line x1="300" y1="215" x2="452" y2="77"
+              stroke="#40916C" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.75"/>
+            <circle cx="452" cy="77" r="3.5" fill="#40916C" opacity="0.75"/>
+            <!-- Pill label -->
+            <rect x="438" y="57" width="124" height="26" rx="13" fill="#1B4332"/>
+            <text x="500" y="73" text-anchor="middle"
+              font-family="Inter, -apple-system, sans-serif" font-size="11.5" font-weight="600" fill="white">⟵ 50 km Radius</text>
+
+            <!-- ── Contract Growers (× marks) ── -->
+            <g stroke="#2D3748" stroke-width="2.5" stroke-linecap="round">
+              <!-- Cell 1 — 3 growers -->
+              <line x1="254" y1="118" x2="262" y2="126"/><line x1="262" y1="118" x2="254" y2="126"/>
+              <line x1="342" y1="132" x2="350" y2="140"/><line x1="350" y1="132" x2="342" y2="140"/>
+              <line x1="268" y1="164" x2="276" y2="172"/><line x1="276" y1="164" x2="268" y2="172"/>
+              <!-- Cell 2 — 3 growers -->
+              <line x1="348" y1="318" x2="356" y2="326"/><line x1="356" y1="318" x2="348" y2="326"/>
+              <line x1="390" y1="340" x2="398" y2="348"/><line x1="398" y1="340" x2="390" y2="348"/>
+              <line x1="386" y1="314" x2="394" y2="322"/><line x1="394" y1="314" x2="386" y2="322"/>
+              <!-- Cell 3 — 2 growers -->
+              <line x1="198" y1="322" x2="206" y2="330"/><line x1="206" y1="322" x2="198" y2="330"/>
+              <line x1="234" y1="344" x2="242" y2="352"/><line x1="242" y1="344" x2="234" y2="352"/>
+            </g>
+
+            <!-- ── Legend ── -->
+            <rect x="0" y="426" width="600" height="84" fill="#E8F5E9"/>
+            <line x1="0" y1="426" x2="600" y2="426" stroke="#C8E6C9" stroke-width="1.5"/>
+
+            <!-- Demo Farm item -->
+            <rect x="24" y="448" width="20" height="20" rx="4" fill="#1B4332"/>
+            <rect x="28" y="452" width="12" height="12" rx="2" fill="#52B788"/>
+            <path d="M 32 462 L 32 458 L 34 456 L 36 458 L 36 462 Z" fill="#1B4332"/>
+            <text x="50" y="460" dominant-baseline="middle"
+              font-family="Inter, -apple-system, sans-serif" font-size="11.5" fill="#374151">Fodder King Demo Farm</text>
+
+            <!-- Contract Grower item -->
+            <g stroke="#2D3748" stroke-width="2.5" stroke-linecap="round">
+              <line x1="196" y1="456" x2="204" y2="464"/>
+              <line x1="204" y1="456" x2="196" y2="464"/>
+            </g>
+            <text x="212" y="460" dominant-baseline="middle"
+              font-family="Inter, -apple-system, sans-serif" font-size="11.5" fill="#374151">Contract Grower</text>
+
+            <!-- Production Cell item -->
+            <ellipse cx="342" cy="460" rx="18" ry="10" fill="rgba(255,213,79,0.3)" stroke="#D4A843" stroke-width="1.5" stroke-dasharray="4 2"/>
+            <text x="364" y="460" dominant-baseline="middle"
+              font-family="Inter, -apple-system, sans-serif" font-size="11.5" fill="#374151">Production Cell</text>
+
+            <!-- Boundary item -->
+            <line x1="470" y1="460" x2="492" y2="460" stroke="#52B788" stroke-width="2" stroke-dasharray="6 3"/>
+            <text x="498" y="460" dominant-baseline="middle"
+              font-family="Inter, -apple-system, sans-serif" font-size="11.5" fill="#374151">50 km Boundary</text>
+
+            <!-- Caption -->
+            <text x="300" y="496" text-anchor="middle"
+              font-family="Inter, -apple-system, sans-serif" font-size="10.5" fill="#6B7280" font-style="italic">
+              Each cell clusters contract growers around a central Fodder King demonstration farm within a 50 km operational radius
+            </text>
+          </svg>
+        </figure>
+      </div>
+
+      <!-- Key stats -->
+      <div class="cells-stats">
+        <div class="cells-stat">
+          <div class="cells-stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div>
+            <strong>50 km</strong>
+            <span>Operational radius per cell</span>
+          </div>
+        </div>
+        <div class="cells-stat">
+          <div class="cells-stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <strong>600 ha</strong>
+            <span>Manageable crop area per operator</span>
+          </div>
+        </div>
+        <div class="cells-stat">
+          <div class="cells-stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div>
+            <strong>10×</strong>
+            <span>More land managed vs. conventional</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- Markets Section -->
   <section class="section section-markets" id="markets">
     <div class="container">
@@ -542,7 +770,8 @@
             <li><a href="#products">Premium Hay</a></li>
             <li><a href="#products">Cubes &amp; Pellets</a></li>
             <li><a href="#products">Chaff &amp; Meal</a></li>
-            <li><a href="#products">Compressed Bales</a></li>
+            <li><a href="horses.html">Lucerne for Horses</a></li>
+            <li><a href="dairy.html">Lucerne for Dairy</a></li>
           </ul>
         </div>
         <div class="footer-links">
