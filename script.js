@@ -1,32 +1,28 @@
 /* ============================================
-   Fodder King — Animated Shader Background
+   Fodder King — Animated Shader Backgrounds
    ============================================ */
-function initHeroShader() {
-  const canvas = document.getElementById('heroShader');
+function initShader(canvas, seed) {
   if (!canvas) return;
 
   const gl = canvas.getContext('webgl', { alpha: true }) ||
              canvas.getContext('experimental-webgl', { alpha: true });
   if (!gl) return;
 
-  // --- Vertex Shader ---
   const vsSource = `
     attribute vec2 a_position;
-    void main() {
-      gl_Position = vec4(a_position, 0.0, 1.0);
-    }
+    void main() { gl_Position = vec4(a_position, 0.0, 1.0); }
   `;
 
-  // --- Fragment Shader: flowing organic gradient ---
   const fsSource = `
     precision mediump float;
     uniform float u_time;
     uniform vec2  u_resolution;
+    uniform float u_seed;
 
     vec2 hash(vec2 p) {
       p = vec2(dot(p, vec2(127.1, 311.7)),
                dot(p, vec2(269.5, 183.3)));
-      return -1.0 + 2.0 * fract(sin(p) * 43758.5453123);
+      return -1.0 + 2.0 * fract(sin(p + u_seed) * 43758.5453123);
     }
 
     float noise(vec2 p) {
@@ -84,7 +80,6 @@ function initHeroShader() {
     gl.shaderSource(shader, source);
     gl.compileShader(shader);
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-      console.error('Shader error:', gl.getShaderInfoLog(shader));
       gl.deleteShader(shader);
       return null;
     }
@@ -103,6 +98,7 @@ function initHeroShader() {
 
   const uTime = gl.getUniformLocation(program, 'u_time');
   const uRes  = gl.getUniformLocation(program, 'u_resolution');
+  const uSeed = gl.getUniformLocation(program, 'u_seed');
   const aPos  = gl.getAttribLocation(program, 'a_position');
 
   const posBuffer = gl.createBuffer();
@@ -136,6 +132,7 @@ function initHeroShader() {
     const elapsed = (performance.now() - startTime) / 1000;
     gl.uniform1f(uTime, elapsed);
     gl.uniform2f(uRes, canvas.width, canvas.height);
+    gl.uniform1f(uSeed, seed);
     gl.drawArrays(gl.TRIANGLES, 0, 6);
 
     requestAnimationFrame(render);
@@ -144,11 +141,31 @@ function initHeroShader() {
   requestAnimationFrame(render);
 }
 
-// Run shader after everything is ready
+function initAllShaders() {
+  // Hero shader
+  initShader(document.getElementById('heroShader'), 0.0);
+
+  // Section shaders — each gets a unique seed for a different pattern
+  var sectionCanvases = document.querySelectorAll('.section-shader');
+  for (var i = 0; i < sectionCanvases.length; i++) {
+    initShader(sectionCanvases[i], (i + 1) * 3.7);
+  }
+}
+
+// Ensure layout is computed before starting shaders
+var _shadersStarted = false;
+function startShaders() {
+  if (_shadersStarted) return;
+  _shadersStarted = true;
+  requestAnimationFrame(function() { initAllShaders(); });
+}
 if (document.readyState === 'complete') {
-  initHeroShader();
+  startShaders();
 } else {
-  window.addEventListener('load', initHeroShader);
+  window.addEventListener('load', startShaders);
+  document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(startShaders, 100);
+  });
 }
 
 /* ============================================

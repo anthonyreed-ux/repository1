@@ -275,7 +275,8 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(135deg, var(--green-900) 0%, var(--green-800) 50%, #1a5c3a 100%);
 }
 
-.hero-shader {
+.hero-shader,
+.section-shader {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -283,6 +284,16 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 0;
   opacity: 0.6;
   pointer-events: none;
+}
+
+.has-shader {
+  position: relative;
+  overflow: hidden;
+}
+
+.has-shader > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-bg {
