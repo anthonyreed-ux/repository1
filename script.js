@@ -59,10 +59,10 @@ function initShader(canvas, seed) {
       float n2 = fbm(uv * 3.0 + n1 + vec2(1.7, 9.2) + t * 0.5);
       float n3 = fbm(uv * 3.0 + n2 + vec2(8.3, 2.8) + t * 0.3);
 
-      vec3 col1 = vec3(0.06, 0.18, 0.12);
-      vec3 col2 = vec3(0.12, 0.35, 0.24);
-      vec3 col3 = vec3(0.22, 0.52, 0.38);
-      vec3 col4 = vec3(0.85, 0.60, 0.25);
+      vec3 col1 = vec3(0.05, 0.35, 0.10);
+      vec3 col2 = vec3(0.10, 0.55, 0.15);
+      vec3 col3 = vec3(0.20, 0.75, 0.25);
+      vec3 col4 = vec3(0.40, 0.90, 0.30);
 
       vec3 color = mix(col1, col2, smoothstep(-0.5, 0.5, n1));
       color = mix(color, col3, smoothstep(-0.3, 0.6, n2) * 0.7);

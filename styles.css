@@ -502,6 +502,26 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--gray-50);
 }
 
+.section-about .section-label {
+  color: var(--black);
+}
+
+.section-about .about-content h2 {
+  color: var(--black);
+}
+
+.section-about .about-content p {
+  color: var(--black);
+}
+
+.section-about .about-features strong {
+  color: var(--black);
+}
+
+.section-about .about-features span {
+  color: var(--black);
+}
+
 .about-image {
   position: relative;
 }
