@@ -309,12 +309,7 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(
-    135deg,
-    rgba(27, 67, 50, 0.7) 0%,
-    rgba(45, 106, 79, 0.55) 50%,
-    rgba(26, 92, 58, 0.65) 100%
-  );
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .hero::before {
