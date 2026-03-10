@@ -142,9 +142,6 @@ function initShader(canvas, seed) {
 }
 
 function initAllShaders() {
-  // Hero shader
-  initShader(document.getElementById('heroShader'), 0.0);
-
   // Section shaders — each gets a unique seed for a different pattern
   var sectionCanvases = document.querySelectorAll('.section-shader');
   for (var i = 0; i < sectionCanvases.length; i++) {
